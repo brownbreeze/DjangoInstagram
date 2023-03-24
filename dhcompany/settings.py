@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-x4*=v2tcuviu=iv@ujqg-bt254v$&b0o+8=0^o$abhele-3gzx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,9 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third apps
+    'debug_toolbar',
+    # local apps 
+    
 ]
 
 MIDDLEWARE = [
+    # DebugToolbar
+    'debug_toolbar.middleware.DebugToolbarMiddleware',    
+    # default
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -57,6 +64,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'dhcompany', 'templates')    
+            # templates 는 BASE_DIR 안에만 넣어도 됨. 굳이 dhcompany안에 넣지 안않아도 상관없음 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -133,3 +141,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERAL_IPS = ['127.0.0.1']
