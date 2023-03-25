@@ -1,1 +1,3 @@
 -r commont.txt
+
+django-debug-toolbar
