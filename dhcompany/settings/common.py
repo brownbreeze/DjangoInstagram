@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # third apps
     'debug_toolbar',
     # local apps 
+    'accounts',
     
 ]
 
@@ -144,3 +145,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERAL_IPS = ['127.0.0.1']
+
+
+AUTH_USER_MODEL = "accounts.User"
