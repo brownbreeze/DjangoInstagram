@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     # local apps 
     'accounts',
+    'dhcompany',
+    
     
 ]
 
