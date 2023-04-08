@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     # local apps 
     'accounts',
-    'dhcompany',
-    
     
 ]
 
@@ -69,7 +67,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'dhcompany', 'templates'), 
-            # templates 는 BASE_DIR 안에만 넣어도 됨. 굳이 dhcompany안에 넣지 안않아도 상관없음 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
