@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser 
 from django.db import models
-from django.core.mail import send_mail
+#from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 class User(AbstractUser):
@@ -16,8 +16,8 @@ class User(AbstractUser):
             "user":self,
             
         })
-        sender_email = settings.WELCOME_EMAL_SENDER
-        send_mail(subject, content, sender_email, [self.email], faile_silently=False)
-        #pass
+        sender_email = settings.WELCOME_EMAL_SENDERq
+        #send_mail(subject, content, sender_email, [self.email], faile_silently=False)
+        pass
         
         
