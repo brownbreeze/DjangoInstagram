@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth import login as auth_login
 from django.shortcuts import render, redirect 
 from .forms import SignupForm 
 from django.contrib.auth.views import LoginView, logout_then_login
@@ -14,6 +15,7 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             signed_user = form.save()
+            auth_login(request, signed_user)
             messages.success(request, "회원가입 환영합니다.")
             signed_user.send_welcome_email() # FIXME:
             next_url = request.GET.get('next', '/')
