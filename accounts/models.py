@@ -16,8 +16,8 @@ class User(AbstractUser):
             "user":self,
             
         })
-        sender_email = settings.WELCOME_EMAL_SENDERq
+        #sender_email = settings.WELCOME_EMAL_SENDER
         #send_mail(subject, content, sender_email, [self.email], faile_silently=False)
-        pass
+        
         
         
