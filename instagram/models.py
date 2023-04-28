@@ -11,6 +11,9 @@ class Post(models.Model):
     def __str__(self):
         return self.caption
     
+    # def get_absolute_url(self):
+    #     return reverse("", kwargs={"pk": self.pk})
+    
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     
