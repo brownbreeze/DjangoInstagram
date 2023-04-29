@@ -4,4 +4,9 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = '__all__'
+        # all 로 했더니 , author 까지 재지정됨 
+        # 특정 Fields 만 작성할 수 있도록 변경 
+        fields = ["photo", "caption", "location"]
+        widgets = {
+            "caption" : forms.Textarea, 
+        }
