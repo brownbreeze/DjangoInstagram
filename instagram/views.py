@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import PostForm
-from .models import Tag
+# from .models import Tag
 
 @login_required
 def post_new(request):
@@ -12,11 +12,9 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            for tag_name in post.extract_tag_list():
-                tag, _= Tag.objects.get_or_create(name=tag_name)
+            post.save()# many to many 는 pk 가 있어야하기 때문에, 먼저 선 저장이 필요하다. 
+            post.tag_set.add(*post.extract_tag_list())
             # TODO 
-            post.save()
-            
             messages.success(request, "포스팅을 저장했습니다.")
             return redirect('/')
             #return redirect(post) # TODO : get_absolute_url 활용 
