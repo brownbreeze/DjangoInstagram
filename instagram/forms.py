@@ -8,5 +8,6 @@ class PostForm(forms.ModelForm):
         # 특정 Fields 만 작성할 수 있도록 변경 
         fields = ["photo", "caption", "location"]
         widgets = {
-            "caption" : forms.Textarea, 
+            "caption" : forms.Textarea,
+            
         }
