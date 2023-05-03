@@ -18,6 +18,10 @@ class User(AbstractUser):
     avatar = models.ImageField(blank=True, upload_to="accounts/avatar/%Y/%m/%d",
                                help_text="48px * 48px 크기의 png/jpg 파일을 업로드해주세요.")
     
+    @property
+    def name(self):
+        return f'{self.first_name} {self.last_name}'
+    
     def send_welcome_email(self):
         subject = render_to_string("accounts/welcome_email_subject.txt", {
             "user":self,

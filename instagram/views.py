@@ -1,8 +1,9 @@
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
+from .models import Post
 # from .models import Tag
 
 @login_required
@@ -16,11 +17,17 @@ def post_new(request):
             post.tag_set.add(*post.extract_tag_list())
             # TODO 
             messages.success(request, "포스팅을 저장했습니다.")
-            return redirect('/')
+            return redirect(post)
             #return redirect(post) # TODO : get_absolute_url 활용 
     else:
         form = PostForm()
     
     return render(request, "instagram/post_form.html", {
         "form": form,
+    })
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, "instagram/post_detail.html", {
+        "post": post,        
     })
