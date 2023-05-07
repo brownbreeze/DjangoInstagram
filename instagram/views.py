@@ -5,7 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
 from .models import Post
-# from .models import Tag
+
+@login_required
+def index(request):
+    return render(request, "instagram/index.html", {
+        
+    })
 
 @login_required
 def post_new(request):
