@@ -3,16 +3,24 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 from .forms import PostForm
 from .models import Post
 
 @login_required
 def index(request):
-    suggested_user_list = get_user_model().objects.all().exclude(pk=request.user.pk)\
+    post_list = Post.objects.all()\
+        .filter(
+            Q(author=request.user) |
+            Q(author__in=request.user.following_set.all()))
+        
+    suggested_user_list = get_user_model().objects.all()\
+        .exclude(pk=request.user.pk)\
         .exclude(pk__in=request.user.following_set.all())[:4]
     
     return render(request, "instagram/index.html", {
-        "suggested_user_list": suggested_user_list,        
+        "suggested_user_list" : suggested_user_list,     
+        "post_list" : post_list,   
     })
 
 @login_required
