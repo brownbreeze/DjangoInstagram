@@ -50,11 +50,19 @@ def post_detail(request, pk):
     })
 
 def user_page(request, username):
-    page_user = get_object_or_404(get_user_model(), username=username, is_active=True)
+    page_user = get_object_or_404(get_user_model(), username=username, is_active=True)    
     post_list = Post.objects.filter(author=page_user)
     post_list_count = post_list.count() # 실제 디비에 count query 사용. len(post_list) 가 오히려 느림 
+    
+        #request.user # login  되어 있으면, User 객체 or AnonymousUser
+    if request.user.is_authenticated:
+        is_follow = request.user.following_set.filter(pk=page_user.pk).exists() 
+    else:
+        is_follow = False   
+
     return render(request, "instagram/user_page.html",{
         "page_user" : page_user,        
         "post_list" : post_list,
         "post_list_count" : post_list_count,
+        "is_follow" : is_follow,
     })
