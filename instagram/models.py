@@ -4,19 +4,25 @@ from django.urls import reverse
 import re
 
 class BaseModel(models.Model):
-    created_at = map.models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
         abstract = True
 
+# User 
+#  -> Post.objects.filter(author=user)
+#  -> user.post_set.all()
+
 class Post(BaseModel):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='my_post_set',
+                                on_delete=models.CASCADE)
     photo = models.ImageField(upload_to="instagram/post/%Y/%m/%d")
     caption = models.CharField(max_length=500)
     tag_set = models.ManyToManyField('Tag', blank=True)
     location = models.CharField(max_length=100)
-    like_user_set = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
+    like_user_set = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True,
+                                           related_name='like_post_set')
     
     def __str__(self):
         return self.caption
@@ -38,7 +44,3 @@ class Tag(models.Model):
     
     def __str__(self):
         return self.name
-
-class LikeUser(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    ser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

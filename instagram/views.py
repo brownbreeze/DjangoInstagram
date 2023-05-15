@@ -55,6 +55,12 @@ def post_detail(request, pk):
     return render(request, "instagram/post_detail.html", {
         "post": post,        
     })
+    
+@login_required
+def post_like(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    messages.success(request, f'{post}를 좋아합니다.')
+    
 
 def user_page(request, username):
     page_user = get_object_or_404(get_user_model(), username=username, is_active=True)    
