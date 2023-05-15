@@ -3,15 +3,20 @@ from django.db import models
 from django.urls import reverse
 import re
 
-class Post(models.Model):
+class BaseModel(models.Model):
+    created_at = map.models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        abstract = True
+
+class Post(BaseModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to="instagram/post/%Y/%m/%d")
     caption = models.CharField(max_length=500)
     tag_set = models.ManyToManyField('Tag', blank=True)
     location = models.CharField(max_length=100)
-    
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    like_user_set = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
     
     def __str__(self):
         return self.caption
@@ -33,3 +38,7 @@ class Tag(models.Model):
     
     def __str__(self):
         return self.name
+
+class LikeUser(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    ser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
