@@ -10,10 +10,6 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-# User 
-#  -> Post.objects.filter(author=user)
-#  -> user.post_set.all()
-
 class Post(BaseModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='my_post_set',
                                 on_delete=models.CASCADE)
@@ -39,6 +35,12 @@ class Post(BaseModel):
     def get_absolute_url(self):
         return reverse("instagram:post_detail", args=[self.pk])
     
+    def is_like_user(self, user):
+        return self.like_user_set.filter(pk=user.pk).exists()
+
+    class Meta:
+        ordering = ['-id']
+        
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     
