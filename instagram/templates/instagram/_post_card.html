@@ -18,6 +18,13 @@
                 <i class="fa fa-heart-o"></i>
             </a>
         {% endif %}
+        </div
+        <div>
+            {% for comment in post.comment_set.all %}
+                <strong>{{ comment.author }}</strong>
+                {{ comment.message }}
+                <small>{{ comment.created_at|naturaltime }}</small>
+            {% endfor %}
         </div>
         <div>
             {% for tag in post.tag_set.all %}
@@ -34,6 +41,7 @@
             </a>
         </div>
     </div>
+    
     <div class="card-footer">
         <a href="{% url "instagram:comment_new" post.pk %}">댓글 쓰기</a>
     </div>
