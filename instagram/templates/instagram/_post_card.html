@@ -18,12 +18,14 @@
                 <i class="fa fa-heart-o"></i>
             </a>
         {% endif %}
-        </div
-        <div>
+        </div>
+        <div class="comment-list mt-3 mb-3">
             {% for comment in post.comment_set.all %}
-                <strong>{{ comment.author }}</strong>
-                {{ comment.message }}
-                <small>{{ comment.created_at|naturaltime }}</small>
+                <div class="comment">
+                    <strong>{{ comment.author }}</strong>
+                    {{ comment.message }}
+                    <small class="text-muted">{{ comment.created_at|naturaltime }}</small>
+                </div>
             {% endfor %}
         </div>
         <div>
