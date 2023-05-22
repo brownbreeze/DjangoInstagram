@@ -45,10 +45,25 @@
     </div>
     
     <div class="card-footer">
-        <form action="{% url "instagram:comment_new" post.pk %}" method="POST">
+        <form id="post-{{ post.pk }}-comment-form" action="{% url "instagram:comment_new" post.pk %}" method="POST">
             {% csrf_token %}
             {% bootstrap_form comment_form %}
             <input class="btn btn-primary btn-block" type="submit" value="댓글 쓰기" />
-        </form>            
+        </form>
+
+        <script>
+            jQuery(function(){
+                var form_id = "post-{{ post.pk }}-comment-form";
+                $("#" + form_id).submit(function(e) {
+                    e.preventDefault();
+
+                    window.that = $(this);
+
+                    /*jslint devel: true */
+                    console.log("submit!");
+                });
+                console.log("document ready.");
+            });
+        </script>            
     </div>
 </div>
