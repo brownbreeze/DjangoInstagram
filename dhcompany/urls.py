@@ -19,7 +19,6 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from django.views.generic import RedirectView
-# import django_pydenticon.urls
 from django_pydenticon.views import image as pydenticon_image
 
 urlpatterns = [

@@ -148,7 +148,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INTERAL_IPS = ['127.0.0.1']
+INTERNAL_IPS = ['0.0.0.0']
 
 
 AUTH_USER_MODEL = "accounts.User"
