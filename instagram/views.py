@@ -90,6 +90,7 @@ def comment_new(request, post_pk):
             comment.author = request.user
             comment.save()
             if request.is_ajax():
+                messages.success(request, f"request is ajax")
                 return render(request, "instagram/_comment.html",{
                     "comment":comment,
                 })
