@@ -19,13 +19,9 @@
             </a>
         {% endif %}
         </div>
-        <div class="comment-list mt-3 mb-3">
+        <div class="comment-list mt-3 mb-3" id="post-{{ post.pk }}-comment-list">
             {% for comment in post.comment_set.all %}
-                <div class="comment">
-                    <strong>{{ comment.author }}</strong>
-                    {{ comment.message }}
-                    <small class="text-muted">{{ comment.created_at|naturaltime }}</small>
-                </div>
+                {% include "instagram/_comment.html" %}
             {% endfor %}
         </div>
         <div>
@@ -58,7 +54,6 @@
                     e.preventDefault();
 
                     var options = {
-                        target: "#server-response-{{ post.pk }}",
                         success: function(responseText, statusText, xhr, $form){
                             console.group("ajax submit response");
                             console.log(responseText);
@@ -66,7 +61,8 @@
                             console.log(xhr);
                             console.log($form);
                             console.groupEnd();
-                            
+                         
+                            $("#post-10-comment-list").prepend(responseText);
                         }
                     };
                     $(this).ajaxSubmit(options);                    

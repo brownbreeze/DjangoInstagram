@@ -1,0 +1,749 @@
+commit dcea792087d35da45dd04101b19424c015993c63
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri May 26 15:51:23 2023 +0000
+
+    fixing error
+    
+    - jquery 가 작동되지 않음
+    - static이 안되는건지 재확인 중
+
+commit cd9a290d8eb806376958c5a01ab56089d5479155
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 22 16:11:46 2023 +0000
+
+    change Post
+    
+    - ajaxSubmit, options 구성
+    - static 파일 못찾음
+
+commit 41b44149f06ba3b036ea37c71df2944f5744c729
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 22 15:45:42 2023 +0000
+
+    change Post
+    
+    - 댓글 쓰기를 눌렀을 경우 javascript 수행
+        - 테스트 상태
+    - `wget https://raw.githubusercontent.com/jquery-form/form/master/dist/jquery.form.min.js`
+        - layout.html 에 추가 기입
+
+commit 11392e84f632003ebb7421c36cfb85c2721cd086
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 21 13:15:43 2023 +0000
+
+    change Post
+    
+    - widget textarea사용
+    - comment_form을 받아 사용
+
+commit 2501be5665dd75a97cf44e15ea934eb9de2468b7
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 21 13:00:28 2023 +0000
+
+    change Post
+    
+    - 댓글 html 수정
+
+commit 2c985f872ac4351560e6eee60739db6282332ed1
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 20 16:04:39 2023 +0000
+
+    change Post
+    
+    - 오타 정리
+    - comment 화면에ㄷ 띄우기
+
+commit 35c9825e593b259455f71f30dcdcab9f0965272f
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 20 15:56:35 2023 +0000
+
+    change Post
+    
+    - CommentForm 생성
+        - comment_form.html 정의
+    - comment_new 생성
+
+commit 84a4b858ce459a19f4bc7a1972bc2968f94407b7
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed May 17 13:51:21 2023 +0000
+
+    change Post
+    
+    - post 생성 시각 naturaltime 으로적용
+
+commit 30d9e146ae70699f7ef4fbb72405836654a1b15d
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed May 17 13:35:57 2023 +0000
+
+    change Post
+    
+    - like, unlike 성공 메시지 짧게 변경
+    - instagram_tags 사용
+        - 좋아요 여부에 따라 다른 heart 표시
+
+commit 46f116e4db34bf6a4461ae7d3c70e03f9dfbecad
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue May 16 14:45:04 2023 +0000
+
+    change Post
+    
+    - post_like, post_unlike views 구현
+        - like_user_set 리스트 관리
+    - custom-template-tags 사용을 위한 Templatetags dir 생성
+        - instagram_tags 내 is_user_like를 위한 tags 사용
+        - post_card.html 내에서 해당 func에 param전달 확인
+
+commit e23d5b02575e22d47c07a4960748de850e606e15
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue May 16 14:14:52 2023 +0000
+
+    change Post
+    
+    - post_like, post_unlike views 구현 진행중
+    - icon awesome 활용
+        - like 표현을 위한 heart icon 적용
+
+commit 4d529b202fd3490be6f5558625235161438b7632
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 15 14:24:10 2023 +0000
+
+    change Post
+    
+    - like, unlike 특성 추가
+
+commit 03ee876b9429162227ccaafb318e7463fd3f1214
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 15 14:13:16 2023 +0000
+
+    change Post
+    
+    - Post 객체에 생성/업데이트 정보 추가
+
+commit 1ff1657c56a0c213fe73970ea2d7187fa86e922a
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 15 14:10:00 2023 +0000
+
+    change Post
+    
+    - post의 날짜 시각 정보 이용
+        - 최근 3일치 데이터만 띄우기
+
+commit 93137357e359e3e28361f48df76ed02b7afdc082
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 14 16:15:58 2023 +0000
+
+    change Post
+    
+    - 생성날짜, 변경날짜 추가
+        - migration
+
+commit 93533591a999cdc7d0f89e66360b78bfa4be3fa4
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 14 11:18:51 2023 +0000
+
+    create root view
+    
+    - user page unfollow 버튼삭제(해당 버튼은 해당user page에서..)
+
+commit 746e9a2814dad68315968686d4900c085c96bbaa
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 13 11:07:38 2023 +0000
+
+    create root view
+    
+    - front 수정
+        - follow친구들의 포스트가 없을 경우, 메시지 작성
+
+commit 8d8aa5ca1d752c5b81ab6ccd68f119751cda160a
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri May 12 09:57:32 2023 +0000
+
+    create root view
+    
+    - instagram home button 적용
+
+commit 689ed116e8ad1ad1235bce348d12705b509ae293
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Thu May 11 11:13:17 2023 +0000
+
+    create timeline view
+    
+    - 사실상 follow 기능 구현
+         - user page 내 follow, unfollow 출력 및 반영 적용
+
+commit 22c5a2584faf0b625e250f7c45fc0b86b784615c
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed May 10 10:38:29 2023 +0000
+
+    create timeline view
+    
+    - 사실상 unfollow 기능 구현
+        - 회원 페이지 내에서 is_follow 여부 확인
+
+commit 102b85e542e57839347e77770b1e7f344398aa03
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue May 9 11:30:42 2023 +0000
+
+    create timeline view
+    
+    - 팔로잉 유저 포스팅 노출
+    - _post_card 따로 관리
+
+commit 81d78e4faca75f3918c11b895d2c30fd63f14258
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 8 01:51:28 2023 +0000
+
+    create timeline view
+    
+    - timeline 서로 자동 맞팔로우 기능
+       - migrations 단계에서오류 발생. 추후 수정 예정
+
+commit 666c5aa98b1ce577a924ea96c106261e7980bd9e
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon May 8 01:31:45 2023 +0000
+
+    create timeline view
+    
+    - timeline 내 following 기능(unfollow 포함)
+    - request.META 사용
+    - ?? commit error
+
+commit 07908188c1ba172e1a3d270891bed1c755ef650c
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 7 15:24:26 2023 +0000
+
+    create timeline view
+    
+    - timeline 내 following 기능(unfollow 포함)
+       - 현재 follow 하면 상대에게도 내가 자동 follow됨
+    - request.META 사용
+
+commit 2e40b55d6580fb6a1d0793a5c6484cd2abcd2bd7
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 7 13:50:38 2023 +0000
+
+    create timeline view
+    
+    - timeline sidebar 에 following 멤버 구현
+    - flex의 auto 정렬 수행
+
+commit 04cda0a2080d27e746cb4053b9c0d6692d9acb33
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 7 13:37:00 2023 +0000
+
+    create timeline view
+    
+    - instagram index.html 생성
+    - d-flex (getbootstrap) 사용
+    - url 변경
+
+commit ccb1fea0149ec0eabe6fc45f7aa57502206577c0
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun May 7 09:01:34 2023 +0000
+
+    create user page
+    
+    - 화면구성
+       - 화면 crop 기적용을 위해 pip install easy-thumbnails
+       - thumbnail 기능 반영
+       - follwer, following 개념은 아직 없음
+       - page_user.user 미사용
+
+commit 8f36999070a339d98c673e14f6542d5d25332f85
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 6 17:18:57 2023 +0000
+
+    create user page
+    
+    - 화면 구성
+       - 사진 photo.url추가
+       - url regex 수정 > 사진 띄우기 오류 수정
+
+commit 6a6064d878cfbe1b1d5321ca10669d1e2e49dc3c
+Merge: 3f73401 3a82119
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 6 16:57:08 2023 +0000
+
+    Merge branch 'main' of https://github.com/brownbreeze/DjangoInstagram into main
+
+commit 3f7340115bc605e895b7fc66e9f185dd4b61eee3
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat May 6 16:55:33 2023 +0000
+
+    create user page
+    
+    - user_page 적용
+    - url 에 username  적용
+    - 화면 구성
+
+commit 3a82119cca1a770cdaaeb3f1777f069328ca0b51
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Sat May 6 07:02:21 2023 +0000
+
+    create instagram Post view
+    
+    - error 수정
+       - ars -> args
+
+commit aada353fc79d3e67f6669d6b3d7488e827f8b1f6
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed May 3 13:55:39 2023 +0000
+
+    create instagram Post view
+    
+    - 게시물 옆,상단바 avatar 수정
+       - property 이용, 없을 경우 pyidenticon 사용
+
+commit a8fd7216ab0fe0c656ced4283726fd81a8da11b6
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed May 3 13:46:45 2023 +0000
+
+    create instagram Post view
+    
+    - post detail view 생성
+    - user name을 full name으로 property 생성
+    - card 구조 내에서 name, images, tags  구조 확인
+
+commit 57dfd1e4ae81152dc62ff90d0c31907541aa4b4b
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue May 2 15:02:03 2023 +0000
+
+    create instagram Post view
+    
+    - list 를 add하여 tag_set에 tag 바로 반영하기
+    - many to many는 선 저장 후 pk 를 가지고 저장/수정이 가능
+
+commit c05e9ccf34dacb68831e326572bf83e87590f665
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue May 2 14:50:46 2023 +0000
+
+    create instagram Post view
+    
+    - model 내 Post에 각 값에대한 상세 설정 추가
+    - caption 내에서 tag 값추출가능하도정규식  사용
+
+commit 72b5226e52de82c359eda5d9a157ca4884b61fb6
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Apr 29 13:51:32 2023 +0000
+
+    create instagram Post view
+    
+    - instagram 새포스팅 구성 조정 (ing)
+
+commit f4c84abbed33f71644bf775a923a423d0341cabb
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Apr 28 14:47:32 2023 +0000
+
+    create instagram Post view
+    
+    - signup form 을 활용한기초 instagram 새 포스팅 쓰기 화면 구현
+        - post_new()(views.py 작성 시, if문 체크)
+
+commit 2f235878f241de36eed07741fa8506d63f5a4ad1
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Apr 28 14:01:53 2023 +0000
+
+    create instagram Post view
+    
+    - instagram migrations 생성 및 실행
+    - 새포스팅 쓰기 기능
+
+commit 8565c9c9863611045c9376a3263cd345ecc87893
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Thu Apr 27 12:15:20 2023 +0000
+
+    create profile_edit view
+    
+    - 암호변경 상세 페이지 html  설정
+
+commit 39012976bb40a914e721fb90b4b2b45265744086
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Thu Apr 27 12:14:57 2023 +0000
+
+    create profile_edit view
+    
+    - old password, new_password  상세 설정
+
+commit 6821305963e4a45c3cd0a47ce0707510d75f4ae5
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed Apr 26 14:56:33 2023 +0000
+
+    create profile_edit view
+    
+    - PasswordChangeView 활용
+    - 비밀번호변경 화면 구성
+
+commit b6b1fcf8f7190fc3d8978b81ad67e71d694f38ce
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 25 12:45:51 2023 +0000
+
+    create profile_edit view
+    
+    - profile -> avatar 이미지 등록
+       - models.ImageField
+    - avatar 가 없을경우에만 pydenticon image 사용
+
+commit 4268941a321ae2c16746d584d83c5224aa29fa13
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 25 12:31:10 2023 +0000
+
+    create profile_edit view
+    
+    - phone_numbr 정규식 반영
+    - gender 선택지
+        - models.TextChoices
+    - makemigrations 수행
+
+commit 5dc558dd1efae097c06b1d8fa8c5351e8550444d
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon Apr 24 14:30:05 2023 +0000
+
+    create profile_edit view
+    
+    - ProfileForm 생성
+    - view profile_edit 생성
+    - form 기본 포맷 변경
+
+commit 49297eb31c75b6862bf5bc2b4778b3964828371b
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Apr 21 13:23:37 2023 +0000
+
+    create basic views
+    
+    - 가운데 정렬 오류 수정 ...
+
+commit 973fac2c218178870f33e49595de1021964e46f8
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Apr 21 13:19:52 2023 +0000
+
+    create basic views
+    
+    - pydenticon image  활용
+
+commit e569daa9becb7880c8da693624d9f9aa2eb5f8af
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Fri Apr 14 11:47:21 2023 +0000
+
+    create signup views
+    
+    - form_title 설정
+    - html  오류 검토 (content 정렬문제)
+      - 미해결
+
+commit 53ab3740243e055f2a7639a198d4835fe8cf8e51
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Fri Apr 14 11:01:34 2023 +0000
+
+    create signup views
+    
+    - git sendgrid 관련 버그 수정
+
+commit 74a3accf266f5dffba1c5b9f239aaa670ca80579
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Thu Apr 13 12:50:19 2023 +0000
+
+    create signup views
+    
+    - logout 기능 추가 -> log out and login
+
+commit 0970046ea180762a4f7a6c1adfb8fda6acc0827c
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Thu Apr 13 12:59:53 2023 +0000
+
+    create signup views
+    
+    - login_form 설정
+    - login views 활용
+
+commit d0a10060bbcd72de2651452402dcbe775f8513db
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 11 14:45:33 2023 +0000
+
+    create signup views
+    
+    - send_email() 미사용 처리
+        - sendgrid 회원가입 불가
+
+commit 8a190defdff17c5bb04c5a975764c1d2a5d25365
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 11 14:43:05 2023 +0000
+
+    create signup views
+    
+    - welcome email 메시지
+    - render_to_string 을 이용 인자값 전달
+
+commit 9058b9b565d128d3d92d56e75afaa8452978bd56
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 9 14:46:55 2023 +0000
+
+    create signup views
+    
+    - welcome message(email전송) 적용 초기
+
+commit 5cd678f6c138fc8b739e9c92eae69df5ae0d1e86
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 9 14:36:57 2023 +0000
+
+    create signup views
+    
+    - root.html 주석 해제(Error 대응)
+    - 이메일 서비스 send grid 적용 (api key 미적용)
+
+commit bf8c61fdc27e9dcc83e5b37e9b3a516aabd3e9fe
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Apr 8 14:46:12 2023 +0000
+
+    create signup views
+    
+    - django.template.exceptions.TemplateDoesNotExist error 해결
+       - 공백 문제 주의
+
+commit edd64fd04a48098018a8ba86b6e8f410af23ed67
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Apr 8 14:01:37 2023 +0000
+
+    create signup views
+    
+    - django.template.exceptions.TemplateDoesNotExist error
+        - templates 철자 확인
+        - accounts 철자확인 이상 무
+
+commit 4fd2b5fd8b4ea92573cb1a67e6163b5d61dd9fba
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 4 13:31:47 2023 +0000
+
+    create signup views
+    
+    - django.template.exceptions.TemplateDoesNotExist error 발생...
+
+commit 1e8361a12376f0b1099645a0afed9ff8148f316b
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Apr 4 13:19:09 2023 +0000
+
+    create signup views
+    
+    - _form.html 분리
+       - include _form.html with 구문 사용
+    - django-bootstrap4 사용
+
+commit 2aa928e230a4baab98195c41414ffa41cf99848b
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon Apr 3 14:21:34 2023 +0000
+
+    create signup views
+    
+    - layout 적용
+
+commit d1366b112ec517ce77d07c2f49bccf726f7c4c59
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon Apr 3 14:11:01 2023 +0000
+
+    create signup views
+    
+    - email 중첩 방지
+    - admin 내 user 보여줄 내용  설정
+    - message있을 경우, 출력 설정
+
+commit ad77e811bd75d9132cd6e271ee26137a44bd29c6
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 2 13:36:13 2023 +0000
+
+    create login view
+    
+    - Meta UserCreationForm.Meta 사용
+    - init() 내 항목 필수 값 설정
+
+commit 7367a06a80f2e835f151f1a99e62ddacf5917978
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 2 13:29:38 2023 +0000
+
+    create login view
+    
+    - 비밀번호 암호화 문제 해결 방안 -> UserCreationForm
+    - 참고
+        ```
+    >>> from django.contrib.auth import get_user_model
+    >>> User = get_user_model()
+    >>> user = User.objects.first()
+    >>> user
+    <User: root>
+    >>> user.password = '1234'
+    >>> user.password
+    '1234'
+    >>>
+    >>> user.set_password('1234')
+    >>> user.password
+    'pbkdf2_sha256$260000$CP3oDGjEUcc5fCNNKYz6f5$tQ0cMW7RReeKBFL/SInqG4Au/mgC4Pvv9o6GPCGuydk='
+    >>> user.save()
+        ```
+
+commit 42a0cd44733bdefae07c5a8e183ba3446f7b763e
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 2 13:24:47 2023 +0000
+
+    create login view
+    
+    - signup form 설정
+       - forms.py 검토 시, 현재 비밀번호 암호화가 안된상태
+    - signup templates 등록
+    - signup views 등록
+
+commit bfaddde22f26676c6397419993c20ff50df6ac8d
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sun Apr 2 13:12:39 2023 +0000
+
+    create login view
+    
+    - accounts AbstractUser 확인
+       - python manage.py migrate
+       - python manage.py createsuperuser
+       - admin/화면에서 새로운 user 생성 시, website_url, bio 정보 추가
+
+commit 59b64c20272fbf7385245ff267ae9b5b0bbed579
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Apr 1 13:10:04 2023 +0000
+
+    create login view
+    
+    - accounts/ 재설정
+       - python manage.py makemigrations accounts
+       - settings/common.py  AUTH_USER_MODEL 설정 필요
+       - AbstractUser 사용
+
+commit ce0f0fcc01ad4154951deece095d89497abf3700
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Apr 1 11:13:21 2023 +0000
+
+    create login view
+    
+    - accounts/ 생성
+    - urls.py 설정
+
+commit 71cd01313384ff8706032ffa67dafbff1bc8bd63
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed Mar 29 13:52:58 2023 +0000
+
+    create basic html view
+    
+    - root.html 화면 기본 class적용
+        - 인증 화면으로변경은 추후 적용 예정
+
+commit 297328467212c8c82754ff9eb5d925aae2ac5325
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed Mar 29 13:50:27 2023 +0000
+
+    create basic html view
+    
+    - logo 추가
+    - 상단 네비 아이콘으로변경
+    - 하단 footer 적용
+
+commit 0beb97d01d2b020f515157c894a99d488ab9dc87
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Mar 28 15:25:16 2023 +0000
+
+    create basic html view
+    
+    - 상단 바 재조정
+
+commit f6affbce657d0f590c8e608e87f72782d59cf195
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Tue Mar 28 15:17:14 2023 +0000
+
+    create basic html view
+    
+    - html 상단 바 생성
+        - https://getbootstrap.com/docs/4.4/examples/pricing/ 참고
+    - static/ dir 못찾는 오류 해결
+
+commit d015f2c8ed223b0d29581c543b89b7b52dc02b9d
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon Mar 27 15:41:56 2023 +0000
+
+    create basic html view
+    
+    - bootstrap 4.4.1 세팅
+    - '/' 링크 기본 화면 생성
+
+commit 91a4a4478679437123a364b33d3ab7454504ea13
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Mon Mar 27 14:57:13 2023 +0000
+
+    create base
+    
+    - settings/ dir 생성
+    - settings/ 내 common, dev, prod 구분
+        - manage.py, aswgi.py, wsgi.py 반영
+    - common.py 내DATABASES링크 오류 해결
+
+commit 41ca8563afcaa4c43edf9ccada34cf53f0245dfe
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Sat Mar 25 03:13:50 2023 +0000
+
+    create base
+    
+    - urls debug_toolbar 적용
+
+commit 1db75fe457c7c3cc3337fa50ddbe3022709a115c
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Mar 24 02:01:10 2023 +0000
+
+    create base
+    
+    - settings.py 복구
+        - common.py 미인식- 추후 재시도 예정
+    - debug toolbar 세팅
+    - ALLOWED_HOSTS 세팅
+
+commit b128d0bfbdb5eae160921b103d1d84f56fedb57b
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Fri Mar 24 01:35:10 2023 +0000
+
+    create base
+    
+    - git ignore 개선
+
+commit 205b2266cd1091e84885aceed0e8c46bc8af6a02
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed Mar 22 15:31:49 2023 +0000
+
+    create base
+    
+    - static/ 기본 jquery 버전 추가
+       - wget https://code.jquery.com/jquery-3.4.1.min.js
+    - templates/layout.html templates폴더 추가를 위한 기본 html
+    - settings.py역할의 common.py보완
+       - static, media, tempaltes 경로 설정
+
+commit 7ca6cdf87e130e6351efaa5ab5f9b1295c9d5ee7
+Author: brwonbreeze <913breeze@gmail.com>
+Date:   Wed Mar 22 15:19:08 2023 +0000
+
+    create base
+    
+    - requirements/ 배포 버전별 설치 파일 따로 설정
+    - settings도 유사하게 진행(진행중)
+
+commit afa710215af2b4ee67f4a193acb4308955b4d9fc
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Mon Mar 20 04:26:58 2023 +0000
+
+    create base
+    
+    - README 수정
+
+commit b9649a307518f098bc056d5a18c7853b3dc8c2c3
+Author: brownbreeze <913breeze@gmail.com>
+Date:   Mon Mar 20 04:09:18 2023 +0000
+
+    create base
+    
+    - 프로젝트 생성
+    - requirements 작성
+
+commit 0fc412b6e58034e64e431b4a6541f20b908e9b73
+Author: dahye kim <105506350+brownbreeze@users.noreply.github.com>
+Date:   Wed Mar 8 20:21:58 2023 +0900
+
+    Initial commit
