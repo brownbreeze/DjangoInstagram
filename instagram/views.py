@@ -40,12 +40,10 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.save()# many to many 는 pk 가 있어야하기 때문에, 먼저 선 저장이 필요하다. 
+            post.save()
             post.tag_set.add(*post.extract_tag_list())
-            # TODO 
             messages.success(request, "포스팅을 저장했습니다.")
             return redirect(post)
-            #return redirect(post) # TODO : get_absolute_url 활용 
     else:
         form = PostForm()
     
@@ -65,7 +63,6 @@ def post_detail(request, pk):
 def post_like(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.like_user_set.add(request.user)
-    # TODO : like 처리 필요
     messages.success(request, f"{post.pk}를 좋아합니다.")
     redirect_url = request.META.get("HTTP_REFEER", "root")
     return redirect(redirect_url)        
@@ -74,7 +71,6 @@ def post_like(request, pk):
 def post_unlike(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.like_user_set.remove(request.user)
-    # TODO : unlike 처리 필요
     messages.success(request, f"{post.pk}를 좋아요를 취소합니다.")
     redirect_url = request.META.get("HTTP_REFEER", "root")
     return redirect(redirect_url)        
@@ -104,9 +100,8 @@ def comment_new(request, post_pk):
 def user_page(request, username):
     page_user = get_object_or_404(get_user_model(), username=username, is_active=True)    
     post_list = Post.objects.filter(author=page_user)
-    post_list_count = post_list.count() # 실제 디비에 count query 사용. len(post_list) 가 오히려 느림 
+    post_list_count = post_list.count() 
     
-        #request.user # login  되어 있으면, User 객체 or AnonymousUser
     if request.user.is_authenticated:
         is_follow = request.user.following_set.filter(pk=page_user.pk).exists() 
     else:

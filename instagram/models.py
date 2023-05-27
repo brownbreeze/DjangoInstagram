@@ -43,7 +43,6 @@ class Post(BaseModel):
 
 
 class Comment(BaseModel):
-    # author user또는 post 가 삭제됐을 때, 같이 삭제 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     message = models.TextField()

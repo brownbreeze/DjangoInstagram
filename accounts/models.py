@@ -7,13 +7,12 @@ from django.core.validators import RegexValidator
 from django.shortcuts import resolve_url
 
 class User(AbstractUser):
-    # django3 
     class GenderChoices(models.TextChoices):
         male = "M", "남성"
         female = "F", "여성"
         
-    follower_set = models.ManyToManyField("self", blank=True)#, symmetrical=False, related_name="following_set")
-    following_set = models.ManyToManyField("self", blank=True)#, symmetrical=False, related_name="follower_set")
+    follower_set = models.ManyToManyField("self", blank=True)
+    following_set = models.ManyToManyField("self", blank=True)
     
     website_url = models.URLField(blank=True)
     bio = models.TextField(blank=True)
@@ -42,8 +41,5 @@ class User(AbstractUser):
             "user":self,
             
         })
-        #sender_email = settings.WELCOME_EMAL_SENDER
-        #send_mail(subject, content, sender_email, [self.email], faile_silently=False)
-        
         
         
