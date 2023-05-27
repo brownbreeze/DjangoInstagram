@@ -4,7 +4,6 @@ from . import views
 
 app_name = 'instagram'
 
-#username_regex = UnicodeUsernameValidator.regex
 urlpatterns = [
     path('', views.index, name='index'),
     path('post/new/', views.post_new, name='post_new'),
